@@ -78,11 +78,17 @@
                 var completeBtn = document.createElement('button');
                 completeBtn.textContent = 'Complete';
                 completeBtn.onclick = function() {
-                    todoText.style.textDecoration = 'line-through';
+                    if (todoText.style.textDecoration === 'line-through') {
+                        todoText.style.textDecoration = 'none';
+                        this.textContent = '완료';
+                    } else {
+                            todoText.style.textDecoration = 'line-through';
+                            this.textContent = '다시 수행하도록';
+                    }
                 };
                 
                 var deleteBtn = document.createElement('button');
-                deleteBtn.textContent = 'Delete';
+                deleteBtn.textContent = '기록영구소실';
                 deleteBtn.onclick = function() {
                     todoList.removeChild(todoItem);
                 };
