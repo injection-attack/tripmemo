@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <title>福岡</title>
+    <style>
+        body { padding: 20px; }
+        .todo-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .todo-text {
+            margin-right: 10px;
+            flex-grow: 1;
+        }
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        #todo-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        #todo-input {
+            flex-grow: 1;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <h1>해야 할 일</h1>
+        <form id="todo-form">
+            <input type="text" id="todo-input" placeholder="やるべきことを書いてください。" required>
+            <button type="submit">記録する!</button>
+        </form>
+        <ol id="todo-list"></ol>
+    </main>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
